@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebuild Jamaica 2025 – Allwyn Facey Foundation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --jamaica-green: #00A651;
+            --jamaica-gold: #FFD700;
+            --jamaica-black: #1a1a1a;
+            --primary-blue: #0066cc;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: #fff;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            background: var(--jamaica-black);
+            padding: 0.8rem 2rem;
+            text-align: right;
+        }
+
+        .language-selector select {
+            background: var(--jamaica-gold);
+            color: var(--jamaica-black);
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .language-selector select:hover {
+            background: white;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, var(--jamaica-green) 0%, var(--jamaica-black) 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: var(--jamaica-gold);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--jamaica-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--jamaica-green) 0%, var(--jamaica-black) 50%, var(--primary-blue) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: var(--jamaica-gold);
+            color: var(--jamaica-black);
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            background: white;
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Mission Section */
+        .mission {
+            background: var(--light-gray);
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .mission h2 {
+            color: var(--jamaica-green);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .mission-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .mission-text h3 {
+            color: var(--jamaica-black);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .mission-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .mission-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            color: var(--jamaica-green);
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Progress Tracker */
+        .progress-section {
+            background: white;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .progress-section h2 {
+            color: var(--jamaica-green);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .progress-bar {
+            background: #ddd;
+            height: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, var(--jamaica-green) 0%, var(--jamaica-gold) 100%);
+            height: 100%;
+            width: 35%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            transition: width 0.5s;
+        }
+
+        .progress-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .progress-info div {
+            padding: 1rem;
+        }
+
+        .progress-info h3 {
+            color: var(--jamaica-green);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-info p {
+            color: var(--dark-gray);
+        }
+
+        /* Donation Tiers */
+        .donation-tiers {
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .donation-tiers h2 {
+            color: var(--jamaica-green);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .tier-card {
+            background: white;
+            border: 2px solid var(--jamaica-green);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .tier-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-color: var(--jamaica-gold);
+        }
+
+        .tier-amount {
+            font-size: 2.5rem;
+            color: var(--jamaica-green);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .tier-title {
+            font-size: 1.3rem;
+            color: var(--jamaica-black);
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .tier-description {
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .tier-button {
+            background: var(--jamaica-green);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .tier-button:hover {
+            background: var(--jamaica-black);
+            transform: scale(1.05);
+        }
+
+        /* Payment Methods */
+        .payment-methods {
+            background: var(--light-gray);
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+        }
+
+        .payment-methods h2 {
+            color: var(--jamaica-green);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .method-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .method-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .method-card h3 {
+            color: var(--jamaica-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .method-card p {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--jamaica-green) 0%, var(--jamaica-black) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+            color: var(--jamaica-gold);
+        }
+
+        .contact-item p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: var(--jamaica-gold);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Social Media */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--jamaica-gold);
+            color: var(--jamaica-black);
+            border-radius: 50%;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .faq-section h2 {
+            color: var(--jamaica-green);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            background: white;
+            border-left: 4px solid var(--jamaica-green);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .faq-item h3 {
+            color: var(--jamaica-black);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-item p {
+            color: var(--dark-gray);
+            display: none;
+            margin-top: 1rem;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--jamaica-black);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--jamaica-gold);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hidden by default */
+        [data-lang]:not([data-lang="en"]) {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .mission-content {
+                grid-template-columns: 1fr;
+            }
+
+            .progress-info {
+                grid-template-columns: 1fr;
+            }
+
+            .tiers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .language-selector {
+                text-align: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <select id="languageSelect" onchange="changeLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+            <option value="de">Deutsch</option>
+            <option value="it">Italiano</option>
+        </select>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">🇯🇲 Rebuild Jamaica 2025</a>
+            <ul>
+                <li><a href="#mission" data-lang="en">Mission</a><a href="#mission" data-lang="fr">Mission</a><a href="#mission" data-lang="es">Misión</a><a href="#mission" data-lang="pt">Missão</a><a href="#mission" data-lang="de">Mission</a><a href="#mission" data-lang="it">Missione</a></li>
+                <li><a href="#donate" data-lang="en">Donate</a><a href="#donate" data-lang="fr">Donner</a><a href="#donate" data-lang="es">Donar</a><a href="#donate" data-lang="pt">Doar</a><a href="#donate" data-lang="de">Spenden</a><a href="#donate" data-lang="it">Donare</a></li>
+                <li><a href="#contact" data-lang="en">Contact</a><a href="#contact" data-lang="fr">Contact</a><a href="#contact" data-lang="es">Contacto</a><a href="#contact" data-lang="pt">Contato</a><a href="#contact" data-lang="de">Kontakt</a><a href="#contact" data-lang="it">Contatti</a></li>
+                <li><a href="#faq" data-lang="en">FAQ</a><a href="#faq" data-lang="fr">FAQ</a><a href="#faq" data-lang="es">FAQ</a><a href="#faq" data-lang="pt">FAQ</a><a href="#faq" data-lang="de">FAQ</a><a href="#faq" data-lang="it">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 data-lang="en">Rebuild Jamaica 2025</h1>
+        <h1 data-lang="fr" style="display:none;">Reconstruire la Jamaïque 2025</h1>
+        <h1 data-lang="es" style="display:none;">Reconstruir Jamaica 2025</h1>
+        <h1 data-lang="pt" style="display:none;">Reconstruir Jamaica 2025</h1>
+        <h1 data-lang="de" style="display:none;">Jamaika 2025 wiederaufbauen</h1>
+        <h1 data-lang="it" style="display:none;">Ricostruire la Giamaica 2025</h1>
+
+        <p data-lang="en">Charity for People in Trouble – Shipping Hope from France to Jamaica</p>
+        <p data-lang="fr" style="display:none;">Charité pour les gens en difficulté – Envoyer l'espoir de la France à la Jamaïque</p>
+        <p data-lang="es" style="display:none;">Caridad para personas en dificultades – Enviando esperanza de Francia a Jamaica</p>
+        <p data-lang="pt" style="display:none;">Caridade para pessoas em dificuldades – Enviando esperança da França para a Jamaica</p>
+        <p data-lang="de" style="display:none;">Wohltätigkeit für Menschen in Not – Hoffnung von Frankreich nach Jamaika senden</p>
+        <p data-lang="it" style="display:none;">Carità per le persone in difficoltà – Inviare speranza dalla Francia alla Giamaica</p>
+
+        <a href="#donate" class="cta-button" data-lang="en">Donate Now 💚</a>
+        <a href="#donate" class="cta-button" data-lang="fr" style="display:none;">Donner Maintenant 💚</a>
+        <a href="#donate" class="cta-button" data-lang="es" style="display:none;">Donar Ahora 💚</a>
+        <a href="#donate" class="cta-button" data-lang="pt" style="display:none;">Doar Agora 💚</a>
+        <a href="#donate" class="cta-button" data-lang="de" style="display:none;">Jetzt Spenden 💚</a>
+        <a href="#donate" class="cta-button" data-lang="it" style="display:none;">Dona Ora 💚</a>
+
+        <a href="#mission" class="cta-button" data-lang="en">Learn More</a>
+        <a href="#mission" class="cta-button" data-lang="fr" style="display:none;">En Savoir Plus</a>
+        <a href="#mission" class="cta-button" data-lang="es" style="display:none;">Más Información</a>
+        <a href="#mission" class="cta-button" data-lang="pt" style="display:none;">Saiba Mais</a>
+        <a href="#mission" class="cta-button" data-lang="de" style="display:none;">Mehr Erfahren</a>
+        <a href="#mission" class="cta-button" data-lang="it" style="display:none;">Scopri di Più</a>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="mission">
+        <div class="container">
+            <h2 data-lang="en">Our Mission</h2>
+            <h2 data-lang="fr" style="display:none;">Notre Mission</h2>
+            <h2 data-lang="es" style="display:none;">Nuestra Misión</h2>
+            <h2 data-lang="pt" style="display:none;">Nossa Missão</h2>
+            <h2 data-lang="de" style="display:none;">Unsere Mission</h2>
+            <h2 data-lang="it" style="display:none;">La Nostra Missione</h2>
+
+            <div class="mission-content">
+                <div class="mission-text">
+                    <h3 data-lang="en">Rebuilding Lives, Empowering Communities</h3>
+                    <h3 data-lang="fr" style="display:none;">Reconstruire des vies, Autonomiser les communautés</h3>
+                    <h3 data-lang="es" style="display:none;">Reconstruyendo vidas, Empoderando comunidades</h3>
+                    <h3 data-lang="pt" style="display:none;">Reconstruindo vidas, Capacitando comunidades</h3>
+                    <h3 data-lang="de" style="display:none;">Leben wiederaufbauen, Gemeinschaften stärken</h3>
+                    <h3 data-lang="it" style="display:none;">Ricostruire vite, Potenziare comunità</h3>
+
+                    <p data-lang="en">Hurricane Mellissa devastated Jamaica on October 28, 2025, leaving thousands homeless, hungry, and hopeless. The Allwyn Facey Foundation is responding with immediate humanitarian action.</p>
+                    <p data-lang="fr" style="display:none;">L'ouragan Mellissa a dévasté la Jamaïque le 28 octobre 2025, laissant des milliers de personnes sans abri, affamées et sans espoir. La Fondation Allwyn Facey répond par une action humanitaire immédiate.</p>
+                    <p data-lang="es" style="display:none;">El huracán Mellissa devastó Jamaica el 28 de octubre de 2025, dejando a miles de personas sin hogar, hambrientas y sin esperanza. La Fundación Allwyn Facey está respondiendo con acción humanitaria inmediata.</p>
+                    <p data-lang="pt" style="display:none;">O furacão Mellissa devastou a Jamaica em 28 de outubro de 2025, deixando milhares de pessoas sem abrigo, famintas e sem esperança. A Fundação Allwyn Facey está respondendo com ação humanitária imediata.</p>
+                    <p data-lang="de" style="display:none;">Der Hurrikan Mellissa verwüstete am 28. Oktober 2025 Jamaika und ließ Tausende obdachlos, hungrig und hoffnungslos. Die Allwyn Facey Foundation antwortet mit sofortiger humanitärer Hilfe.</p>
+                    <p data-lang="it" style="display:none;">L'uragano Mellissa ha devastato la Giamaica il 28 ottobre 2025, lasciando migliaia di persone senza casa, affamate e senza speranza. La Fondazione Allwyn Facey sta rispondendo con azioni umanitarie immediate.</p>
+
+                    <p data-lang="en">We are shipping a full 20ft container of relief supplies from Perpignan, France to Jamaica, reaching four severely affected parishes: Saint Mary, Trelawny, Westmoreland, and Saint Elizabeth.</p>
+                    <p data-lang="fr" style="display:none;">Nous expédions un conteneur complet de 20 pieds de fournitures d'aide de Perpignan, France à la Jamaïque, atteignant quatre paroisses gravement touchées: Sainte-Marie, Trelawny, Westmoreland et Sainte-Élisabeth.</p>
+                    <p data-lang="es" style="display:none;">Estamos enviando un contenedor completo de 20 pies de suministros de ayuda de Perpiñán, Francia a Jamaica, llegando a cuatro parroquias gravemente afectadas: Saint Mary, Trelawny, Westmoreland y Saint Elizabeth.</p>
+                    <p data-lang="pt" style="display:none;">Estamos enviando um contêiner completo de 20 pés de suprimentos de ajuda de Perpignan, França para a Jamaica, alcançando quatro paróquias gravemente afetadas: Saint Mary, Trelawny, Westmoreland e Saint Elizabeth.</p>
+                    <p data-lang="de" style="display:none;">Wir versenden einen kompletten 20-Fuß-Container mit Hilfslieferungen von Perpignan, Frankreich nach Jamaika und erreichen vier schwer betroffene Pfarreien: Saint Mary, Trelawny, Westmoreland und Saint Elizabeth.</p>
+                    <p data-lang="it" style="display:none;">Stiamo spedendo un contenitore completo di 20 piedi di forniture di soccorso da Perpignano, Francia a Giamaica, raggiungendo quattro parrocchie gravemente colpite: Saint Mary, Trelawny, Westmoreland e Saint Elizabeth.</p>
+
+                    <p data-lang="en"><strong>Together, we rebuild Jamaica. Together, we rise.</strong></p>
+                    <p data-lang="fr" style="display:none;"><strong>Ensemble, nous reconstruisons la Jamaïque. Ensemble, nous nous élevons.</strong></p>
+                    <p data-lang="es" style="display:none;"><strong>Juntos, reconstruimos Jamaica. Juntos, nos levantamos.</strong></p>
+                    <p data-lang="pt" style="display:none;"><strong>Juntos, reconstruímos Jamaica. Juntos, nos levantamos.</strong></p>
+                    <p data-lang="de" style="display:none;"><strong>Zusammen bauen wir Jamaika wieder auf. Zusammen erheben wir uns.</strong></p>
+                    <p data-lang="it" style="display:none;"><strong>Insieme, ricostruiamo la Giamaica. Insieme, ci alziamo.</strong></p>
+                </div>
+                <div class="mission-stats">
+                    <div class="stat">
+                        <div class="stat-number">500-1,000+</div>
+                        <div class="stat-label" data-lang="en">Families to Help</div>
+                        <div class="stat-label" data-lang="fr" style="display:none;">Familles à aider</div>
+                        <div class="stat-label" data-lang="es" style="display:none;">Familias a ayudar</div>
+                        <div class="stat-label" data-lang="pt" style="display:none;">Famílias para ajudar</div>
+                        <div class="stat-label" data-lang="de" style="display:none;">Familien zum Helfen</div>
+                        <div class="stat-label" data-lang="it" style="display:none;">Famiglie da aiutare</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label" data-lang="en">Parishes Served</div>
+                        <div class="stat-label" data-lang="fr" style="display:none;">Paroisses desservies</div>
+                        <div class="stat-label" data-lang="es" style="display:none;">Parroquias servidas</div>
+                        <div class="stat-label" data-lang="pt" style="display:none;">Paróquias servidas</div>
+                        <div class="stat-label" data-lang="de" style="display:none;">Gemeinden bedient</div>
+                        <div class="stat-label" data-lang="it" style="display:none;">Parrocchie servite</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">20ft</div>
+                        <div class="stat-label" data-lang="en">Container Shipped</div>
+                        <div class="stat-label" data-lang="fr" style="display:none;">Conteneur expédié</div>
+                        <div class="stat-label" data-lang="es" style="display:none;">Contenedor enviado</div>
+                        <div class="stat-label" data-lang="pt" style="display:none;">Contêiner enviado</div>
+                        <div class="stat-label" data-lang="de" style="display:none;">Container versandt</div>
+                        <div class="stat-label" data-lang="it" style="display:none;">Contenitore spedito</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">€50-100K</div>
+                        <div class="stat-label" data-lang="en">Target Fundraising</div>
+                        <div class="stat-label" data-lang="fr" style="display:none;">Collecte de fonds cible</div>
+                        <div class="stat-label" data-lang="es" style="display:none;">Recaudación de fondos objetivo</div>
+                        <div class="stat-label" data-lang="pt" style="display:none;">Arrecadação de fundos alvo</div>
+                        <div class="stat-label" data-lang="de" style="display:none;">Zielspendenziel</div>
+                        <div class="stat-label" data-lang="it" style="display:none;">Raccolta fondi target</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Tracker -->
+    <section class="progress-section">
+        <div class="container">
+            <h2 data-lang="en">Fundraising Progress</h2>
+            <h2 data-lang="fr" style="display:none;">Progrès de la collecte de fonds</h2>
+            <h2 data-lang="es" style="display:none;">Progreso de recaudación de fondos</h2>
+            <h2 data-lang="pt" style="display:none;">Progresso da arrecadação de fundos</h2>
+            <h2 data-lang="de" style="display:none;">Spendenfortschritt</h2>
+            <h2 data-lang="it" style="display:none;">Progresso della raccolta fondi</h2>
+
+            <div class="progress-bar">
+                <div class="progress-fill" data-lang="en">35% Complete</div>
+                <div class="progress-fill" data-lang="fr" style="display:none;">35% Complété</div>
+                <div class="progress-fill" data-lang="es" style="display:none;">35% Completado</div>
+                <div class="progress-fill" data-lang="pt" style="display:none;">35% Completo</div>
+                <div class="progress-fill" data-lang="de" style="display:none;">35% Fertig</div>
+                <div class="progress-fill" data-lang="it" style="display:none;">35% Completato</div>
+            </div>
+            <div class="progress-info">
+                <div>
+                    <h3>€17,500</h3>
+                    <p data-lang="en">Raised So Far</p>
+                    <p data-lang="fr" style="display:none;">Collecté jusqu'à présent</p>
+                    <p data-lang="es" style="display:none;">Recaudado hasta ahora</p>
+                    <p data-lang="pt" style="display:none;">Arrecadado até agora</p>
+                    <p data-lang="de" style="display:none;">Bisher gesammelt</p>
+                    <p data-lang="it" style="display:none;">Raccolto finora</p>
+                </div>
+                <div>
+                    <h3>€50,000</h3>
+                    <p data-lang="en">Minimum Goal</p>
+                    <p data-lang="fr" style="display:none;">Objectif minimum</p>
+                    <p data-lang="es" style="display:none;">Objetivo mínimo</p>
+                    <p data-lang="pt" style="display:none;">Meta mínima</p>
+                    <p data-lang="de" style="display:none;">Mindestziel</p>
+                    <p data-lang="it" style="display:none;">Obiettivo minimo</p>
+                </div>
+                <div>
+                    <h3>18 Days</h3>
+                    <p data-lang="en">Until Shipment</p>
+                    <p data-lang="fr" style="display:none;">Jusqu'à l'expédition</p>
+                    <p data-lang="es" style="display:none;">Hasta el envío</p>
+                    <p data-lang="pt" style="display:none;">Até o envio</p>
+                    <p data-lang="de" style="display:none;">Bis zum Versand</p>
+                    <p data-lang="it" style="display:none;">Fino alla spedizione</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Tiers -->
+    <section id="donate" class="donation-tiers">
+        <div class="container">
+            <h2 data-lang="en">Choose Your Impact Level</h2>
+            <h2 data-lang="fr" style="display:none;">Choisissez votre niveau d'impact</h2>
+            <h2 data-lang="es" style="display:none;">Elige tu nivel de impacto</h2>
+            <h2 data-lang="pt" style="display:none;">Escolha seu nível de impacto</h2>
+            <h2 data-lang="de" style="display:none;">Wählen Sie Ihre Auswirkungsstufe</h2>
+            <h2 data-lang="it" style="display:none;">Scegli il tuo livello di impatto</h2>
+
+            <div class="tiers-grid">
+                <div class="tier-card fade-in">
+                    <div class="tier-amount">€25</div>
+                    <div class="tier-title" data-lang="en">Feed a Family</div>
+                    <div class="tier-title" data-lang="fr" style="display:none;">Nourrir une famille</div>
+                    <div class="tier-title" data-lang="es" style="display:none;">Alimentar una familia</div>
+                    <div class="tier-title" data-lang="pt" style="display:none;">Alimentar uma família</div>
+                    <div class="tier-title" data-lang="de" style="display:none;">Eine Familie ernähren</div>
+                    <div class="tier-title" data-lang="it" style="display:none;">Nutrire una famiglia</div>
+
+                    <div class="tier-description" data-lang="en">Provides one week of food for a family of four</div>
+                    <div class="tier-description" data-lang="fr" style="display:none;">Fournit une semaine de nourriture pour une famille de quatre</div>
+                    <div class="tier-description" data-lang="es" style="display:none;">Proporciona una semana de comida para una familia de cuatro</div>
+                    <div class="tier-description" data-lang="pt" style="display:none;">Fornece uma semana de comida para uma família de quatro</div>
+                    <div class="tier-description" data-lang="de" style="display:none;">Bietet eine Woche Essen für eine vierköpfige Familie</div>
+                    <div class="tier-description" data-lang="it" style="display:none;">Fornisce una settimana di cibo per una famiglia di quattro</div>
+
+                    <form action="https://www.paypal.com/donate" method="post" target="_top">
+                        <input type="hidden" name="hosted_button_id" value="DF7M7WWWXA922">
+                        <input type="hidden" name="amount" value="25">
+                        <button type="submit" class="tier-button" data-lang="en">Donate €25</button>
+                        <button type="submit" class="tier-button" data-lang="fr" style="display:none;">Donner 25€</button>
+                        <button type="submit" class="tier-button" data-lang="es" style="display:none;">Donar €25</button>
+                        <button type="submit" class="tier-button" data-lang="pt" style="display:none;">Doar €25</button>
+                        <button type="submit" class="tier-button" data-lang="de" style="display:none;">25€ spenden</button>
+                        <button type="submit" class="tier-button" data-lang="it" style="display:none;">Dona €25</button>
+                    </form>
+                </div>
+
+                <div class="tier-card fade-in">
+                    <div class="tier-amount">€50</div>
+                    <div class="tier-title" data-lang="en">Clothe a Family</div>
+                    <div class="tier-title" data-lang="fr" style="display:none;">Vêtir une famille</div>
+                    <div class="tier-title" data-lang="es" style="display:none;">Vestir una familia</div>
+                    <div class="tier-title" data-lang="pt" style="display:none;">Vestir uma família</div>
+                    <div class="tier-title" data-lang="de" style="display:none;">Eine Familie kleiden</div>
+                    <div class="tier-title" data-lang="it" style="display:none;">Vestire una famiglia</div>
+
+                    <div class="tier-description" data-lang="en">Provides clothing for an entire family</div>
+                    <div class="tier-description" data-lang="fr" style="display:none;">Fournit des vêtements pour une famille entière</div>
+                    <div class="tier-description" data-lang="es" style="display:none;">Proporciona ropa para toda una familia</div>
+                    <div class="tier-description" data-lang="pt" style="display:none;">Fornece roupas para toda uma família</div>
+                    <div class="tier-description" data-lang="de" style="display:none;">Bietet Kleidung für eine ganze Familie</div>
+                    <div class="tier-description" data-lang="it" style="display:none;">Fornisce abbigliamento per un'intera famiglia</div>
+
+                    <form action="https://www.paypal.com/donate" method="post" target="_top">
+                        <input type="hidden" name="hosted_button_id" value="DF7M7WWWXA922">
+                        <input type="hidden" name="amount" value="50">
+                        <button type="submit" class="tier-button" data-lang="en">Donate €50</button>
+                        <button type="submit" class="tier-button" data-lang="fr" style="display:none;">Donner 50€</button>
+                        <button type="submit" class="tier-button" data-lang="es" style="display:none;">Donar €50</button>
+                        <button type="submit" class="tier-button" data-lang="pt" style="display:none;">Doar €50</button>
+                        <button type="submit" class="tier-button" data-lang="de" style="display:none;">50€ spenden</button>
+                        <button type="submit" class="tier-button" data-lang="it" style="display:none;">Dona €50</button>
+                    </form>
+                </div>
+
+                <div class="tier-card fade-in">
+                    <div class="tier-amount">€100</div>
+                    <div class="tier-title" data-lang="en">Equip a Family</div>
+                    <div class="tier-title" data-lang="fr" style="display:none;">Équiper une famille</div>
+                    <div class="tier-title" data-lang="es" style="display:none;">Equipar una familia</div>
+                    <div class="tier-title" data-lang="pt" style="display:none;">Equipar uma família</div>
+                    <div class="tier-title" data-lang="de" style="display:none;">Eine Familie ausstatten</div>
+                    <div class="tier-title" data-lang="it" style="display:none;">Equipaggiare una famiglia</div>
+
+                    <div class="tier-description" data-lang="en">Food, clothing, medicine, and school supplies</div>
+                    <div class="tier-description" data-lang="fr" style="display:none;">Nourriture, vêtements, médicaments et fournitures scolaires</div>
+                    <div class="tier-description" data-lang="es" style="display:none;">Alimentos, ropa, medicinas y suministros escolares</div>
+                    <div class="tier-description" data-lang="pt" style="display:none;">Alimentos, roupas, medicamentos e suprimentos escolares</div>
+                    <div class="tier-description" data-lang="de" style="display:none;">Lebensmittel, Kleidung, Medikamente und Schulbedarf</div>
+                    <div class="tier-description" data-lang="it" style="display:none;">Cibo, abbigliamento, medicinali e forniture scolastiche</div>
+
+                    <form action="https://www.paypal.com/donate" method="post" target="_top">
+                        <input type="hidden" name="hosted_button_id" value="DF7M7WWWXA922">
+                        <input type="hidden" name="amount" value="100">
+                        <button type="submit" class="tier-button" data-lang="en">Donate €100</button>
+                        <button type="submit" class="tier-button" data-lang="fr" style="display:none;">Donner 100€</button>
+                        <button type="submit" class="tier-button" data-lang="es" style="display:none;">Donar €100</button>
+                        <button type="submit" class="tier-button" data-lang="pt" style="display:none;">Doar €100</button>
+                        <button type="submit" class="tier-button" data-lang="de" style="display:none;">100€ spenden</button>
+                        <button type="submit" class="tier-button" data-lang="it" style="display:none;">Dona €100</button>
+                    </form>
+                </div>
+
+                <div class="tier-card fade-in">
+                    <div class="tier-amount">€250</div>
+                    <div class="tier-title" data-lang="en">Support a Community</div>
+                    <div class="tier-title" data-lang="fr" style="display:none;">Soutenir une communauté</div>
+                    <div class="tier-title" data-lang="es" style="display:none;">Apoyar una comunidad</div>
+                    <div class="tier-title" data-lang="pt" style="display:none;">Apoiar uma comunidade</div>
+                    <div class="tier-title" data-lang="de" style="display:none;">Eine Gemeinschaft unterstützen</div>
+                    <div class="tier-title" data-lang="it" style="display:none;">Supportare una comunità</div>
+
+                    <div class="tier-description" data-lang="en">Comprehensive support for multiple families</div>
+                    <div class="tier-description" data-lang="fr" style="display:none;">Soutien complet pour plusieurs familles</div>
+                    <div class="tier-description" data-lang="es" style="display:none;">Apoyo integral para múltiples familias</div>
+                    <div class="tier-description" data-lang="pt" style="display:none;">Apoio abrangente para múltiplas famílias</div>
+                    <div class="tier-description" data-lang="de" style="display:none;">Umfassende Unterstützung für mehrere Familien</div>
+                    <div class="tier-description" data-lang="it" style="display:none;">Supporto completo per più famiglie</div>
+
+                    <form action="https://www.paypal.com/donate" method="post" target="_top">
+                        <input type="hidden" name="hosted_button_id" value="DF7M7WWWXA922">
+                        <input type="hidden" name="amount" value="250">
+                        <button type="submit" class="tier-button" data-lang="en">Donate €250</button>
+                        <button type="submit" class="tier-button" data-lang="fr" style="display:none;">Donner 250€</button>
+                        <button type="submit" class="tier-button" data-lang="es" style="display:none;">Donar €250</button>
+                        <button type="submit" class="tier-button" data-lang="pt" style="display:none;">Doar €250</button>
+                        <button type="submit" class="tier-button" data-lang="de" style="display:none;">250€ spenden</button>
+                        <button type="submit" class="tier-button" data-lang="it" style="display:none;">Dona €250</button>
+                    </form>
+                </div>
+
+                <div class="tier-card fade-in">
+                    <div class="tier-amount">€500+</div>
+                    <div class="tier-title" data-lang="en">Be a Hero</div>
+                    <div class="tier-title" data-lang="fr" style="display:none;">Soyez un héros</div>
+                    <div class="tier-title" data-lang="es" style="display:none;">Sé un héroe</div>
+                    <div class="tier-title" data-lang="pt" style="display:none;">Seja um herói</div>
+                    <div class="tier-title" data-lang="de" style="display:none;">Sei ein Held</div>
+                    <div class="tier-title" data-lang="it" style="display:none;">Sii un eroe</div>
+
+                    <div class="tier-description" data-lang="en">Major donor status + comprehensive community support</div>
+                    <div class="tier-description" data-lang="fr" style="display:none;">Statut de grand donateur + soutien communautaire complet</div>
+                    <div class="tier-description" data-lang="es" style="display:none;">Estado de donante principal + apoyo comunitario integral</div>
+                    <div class="tier-description" data-lang="pt" style="display:none;">Status de grande doador + apoio comunitário abrangente</div>
+                    <div class="tier-description" data-lang="de" style="display:none;">Hauptspenderstatus + umfassende Gemeinschaftsunterstützung</div>
+                    <div class="tier-description" data-lang="it" style="display:none;">Stato di grande donatore + supporto comunitario completo</div>
+
+                    <form action="https://www.paypal.com/donate" method="post" target="_top">
+                        <input type="hidden" name="hosted_button_id" value="DF7M7WWWXA922">
+                        <input type="hidden" name="amount" value="500">
+                        <button type="submit" class="tier-button" data-lang="en">Donate €500+</button>
+                        <button type="submit" class="tier-button" data-lang="fr" style="display:none;">Donner 500€+</button>
+                        <button type="submit" class="tier-button" data-lang="es" style="display:none;">Donar €500+</button>
+                        <button type="submit" class="tier-button" data-lang="pt" style="display:none;">Doar €500+</button>
+                        <button type="submit" class="tier-button" data-lang="de" style="display:none;">500€+ spenden</button>
+                        <button type="submit" class="tier-button" data-lang="it" style="display:none;">Dona €500+</button>
+                    </form>
+                </div>
+
+                <div class="tier-card fade-in">
+                    <div class="tier-amount" data-lang="en">Custom</div>
+                    <div class="tier-amount" data-lang="fr" style="display:none;">Personnalisé</div>
+                    <div class="tier-amount" data-lang="es" style="display:none;">Personalizado</div>
+                    <div class="tier-amount" data-lang="pt" style="display:none;">Personalizado</div>
+                    <div class="tier-amount" data-lang="de" style="display:none;">Benutzerdefiniert</div>
+                    <div class="tier-amount" data-lang="it" style="display:none;">Personalizzato</div>
+
+                    <div class="tier-title" data-lang="en">Your Amount</div>
+                    <div class="tier-title" data-lang="fr" style="display:none;">Votre montant</div>
+                    <div class="tier-title" data-lang="es" style="display:none;">Tu cantidad</div>
+                    <div class="tier-title" data-lang="pt" style="display:none;">Seu valor</div>
+                    <div class="tier-title" data-lang="de" style="display:none;">Ihr Betrag</div>
+                    <div class="tier-title" data-lang="it" style="display:none;">Il tuo importo</div>
+
+                    <div class="tier-description" data-lang="en">Choose any amount that works for you</div>
+                    <div class="tier-description" data-lang="fr" style="display:none;">Choisissez n'importe quel montant qui vous convient</div>
+                    <div class="tier-description" data-lang="es" style="display:none;">Elige cualquier cantidad que funcione para ti</div>
+                    <div class="tier-description" data-lang="pt" style="display:none;">Escolha qualquer valor que funcione para você</div>
+                    <div class="tier-description" data-lang="de" style="display:none;">Wählen Sie einen beliebigen Betrag, der für Sie funktioniert</div>
+                    <div class="tier-description" data-lang="it" style="display:none;">Scegli qualsiasi importo che funzioni per te</div>
+
+                    <form action="https://www.paypal.com/donate" method="post" target="_top">
+                        <input type="hidden" name="hosted_button_id" value="DF7M7WWWXA922">
+                        <button type="submit" class="tier-button" data-lang="en">Donate Custom Amount</button>
+                        <button type="submit" class="tier-button" data-lang="fr" style="display:none;">Donner un montant personnalisé</button>
+                        <button type="submit" class="tier-button" data-lang="es" style="display:none;">Donar cantidad personalizada</button>
+                        <button type="submit" class="tier-button" data-lang="pt" style="display:none;">Doar valor personalizado</button>
+                        <button type="submit" class="tier-button" data-lang="de" style="display:none;">Benutzerdefinierten Betrag spenden</button>
+                        <button type="submit" class="tier-button" data-lang="it" style="display:none;">Dona importo personalizzato</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="payment-methods">
+        <div class="container">
+            <h2 data-lang="en">How to Donate</h2>
+            <h2 data-lang="fr" style="display:none;">Comment donner</h2>
+            <h2 data-lang="es" style="display:none;">Cómo donar</h2>
+            <h2 data-lang="pt" style="display:none;">Como doar</h2>
+            <h2 data-lang="de" style="display:none;">So spenden Sie</h2>
+            <h2 data-lang="it" style="display:none;">Come donare</h2>
+
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-icon">💳</div>
+                    <h3>PayPal</h3>
+                    <p data-lang="en">Secure online payments via PayPal. Click any donation button above.</p>
+                    <p data-lang="fr" style="display:none;">Paiements en ligne sécurisés via PayPal. Cliquez sur n'importe quel bouton de don ci-dessus.</p>
+                    <p data-lang="es" style="display:none;">Pagos en línea seguros a través de PayPal. Haz clic en cualquier botón de donación anterior.</p>
+                    <p data-lang="pt" style="display:none;">Pagamentos online seguros via PayPal. Clique em qualquer botão de doação acima.</p>
+                    <p data-lang="de" style="display:none;">Sichere Online-Zahlungen über PayPal. Klicken Sie auf eine der obigen Spendenschaltflächen.</p>
+                    <p data-lang="it" style="display:none;">Pagamenti online sicuri tramite PayPal. Fai clic su qualsiasi pulsante di donazione sopra.</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">🏦</div>
+                    <h3 data-lang="en">Bank Transfer</h3>
+                    <h3 data-lang="fr" style="display:none;">Virement bancaire</h3>
+                    <h3 data-lang="es" style="display:none;">Transferencia bancaria</h3>
+                    <h3 data-lang="pt" style="display:none;">Transferência bancária</h3>
+                    <h3 data-lang="de" style="display:none;">Banküberweisung</h3>
+                    <h3 data-lang="it" style="display:none;">Bonifico bancario</h3>
+
+                    <p data-lang="en">Direct bank transfer available. Contact us for details.</p>
+                    <p data-lang="fr" style="display:none;">Virement bancaire direct disponible. Contactez-nous pour plus de détails.</p>
+                    <p data-lang="es" style="display:none;">Transferencia bancaria directa disponible. Contáctenos para más detalles.</p>
+                    <p data-lang="pt" style="display:none;">Transferência bancária direta disponível. Entre em contato conosco para detalhes.</p>
+                    <p data-lang="de" style="display:none;">Direkte Banküberweisung verfügbar. Kontaktieren Sie uns für Details.</p>
+                    <p data-lang="it" style="display:none;">Bonifico bancario diretto disponibile. Contattaci per i dettagli.</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">📱</div>
+                    <h3>WhatsApp</h3>
+                    <p data-lang="en">Message us on WhatsApp for alternative payment options.</p>
+                    <p data-lang="fr" style="display:none;">Envoyez-nous un message sur WhatsApp pour d'autres options de paiement.</p>
+                    <p data-lang="es" style="display:none;">Envíanos un mensaje en WhatsApp para otras opciones de pago.</p>
+                    <p data-lang="pt" style="display:none;">Envie-nos uma mensagem no WhatsApp para outras opções de pagamento.</p>
+                    <p data-lang="de" style="display:none;">Schreiben Sie uns auf WhatsApp für alternative Zahlungsoptionen.</p>
+                    <p data-lang="it" style="display:none;">Inviaci un messaggio su WhatsApp per altre opzioni di pagamento.</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">🌐</div>
+                    <h3 data-lang="en">Online</h3>
+                    <h3 data-lang="fr" style="display:none;">En ligne</h3>
+                    <h3 data-lang="es" style="display:none;">En línea</h3>
+                    <h3 data-lang="pt" style="display:none;">Online</h3>
+                    <h3 data-lang="de" style="display:none;">Online</h3>
+                    <h3 data-lang="it" style="display:none;">Online</h3>
+
+                    <p data-lang="en">Multiple secure online payment options available.</p>
+                    <p data-lang="fr" style="display:none;">Plusieurs options de paiement en ligne sécurisées disponibles.</p>
+                    <p data-lang="es" style="display:none;">Múltiples opciones de pago en línea seguro disponibles.</p>
+                    <p data-lang="pt" style="display:none;">Múltiplas opções de pagamento online seguro disponíveis.</p>
+                    <p data-lang="de" style="display:none;">Mehrere sichere Online-Zahlungsoptionen verfügbar.</p>
+                    <p data-lang="it" style="display:none;">Sono disponibili più opzioni di pagamento online sicure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 data-lang="en">Get in Touch</h2>
+            <h2 data-lang="fr" style="display:none;">Nous contacter</h2>
+            <h2 data-lang="es" style="display:none;">Ponte en contacto</h2>
+            <h2 data-lang="pt" style="display:none;">Entre em contato</h2>
+            <h2 data-lang="de" style="display:none;">Kontakt aufnehmen</h2>
+            <h2 data-lang="it" style="display:none;">Contattaci</h2>
+
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>📞 WhatsApp</h3>
+                    <p><a href="https://wa.me/33749207250">+33 7 49 20 72 50</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p><a href="mailto:allwynfacey21@gmail.com">allwynfacey21@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3 data-lang="en">📍 Location</h3>
+                    <h3 data-lang="fr" style="display:none;">📍 Localisation</h3>
+                    <h3 data-lang="es" style="display:none;">📍 Ubicación</h3>
+                    <h3 data-lang="pt" style="display:none;">📍 Localização</h3>
+                    <h3 data-lang="de" style="display:none;">📍 Standort</h3>
+                    <h3 data-lang="it" style="display:none;">📍 Posizione</h3>
+
+                    <p data-lang="en">Perpignan, France 🇫🇷</p>
+                    <p data-lang="fr" style="display:none;">Perpignan, France 🇫🇷</p>
+                    <p data-lang="es" style="display:none;">Perpignan, Francia 🇫🇷</p>
+                    <p data-lang="pt" style="display:none;">Perpignan, França 🇫🇷</p>
+                    <p data-lang="de" style="display:none;">Perpignan, Frankreich 🇫🇷</p>
+                    <p data-lang="it" style="display:none;">Perpignano, Francia 🇫🇷</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/14NNEuKQjQD/" target="_blank" title="Facebook">f</a>
+                <a href="https://www.instagram.com/allwynfacey/" target="_blank" title="Instagram">📷</a>
+                <a href="https://www.tiktok.com/@allwynfacey" target="_blank" title="TikTok">🎵</a>
+                <a href="https://youtube.com/@allwynfacey8683" target="_blank" title="YouTube">▶</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 data-lang="en">Frequently Asked Questions</h2>
+            <h2 data-lang="fr" style="display:none;">Questions fréquemment posées</h2>
+            <h2 data-lang="es" style="display:none;">Preguntas frecuentes</h2>
+            <h2 data-lang="pt" style="display:none;">Perguntas frequentes</h2>
+            <h2 data-lang="de" style="display:none;">Häufig gestellte Fragen</h2>
+            <h2 data-lang="it" style="display:none;">Domande frequenti</h2>
+
+            <div class="faq-item">
+                <h3 data-lang="en">How will my donation be used? <span>▼</span></h3>
+                <h3 data-lang="fr" style="display:none;">Comment mon don sera-t-il utilisé ? <span>▼</span></h3>
+                <h3 data-lang="es" style="display:none;">¿Cómo se utilizará mi donación? <span>▼</span></h3>
+                <h3 data-lang="pt" style="display:none;">Como minha doação será usada? <span>▼</span></h3>
+                <h3 data-lang="de" style="display:none;">Wie wird meine Spende verwendet? <span>▼</span></h3>
+                <h3 data-lang="it" style="display:none;">Come verrà utilizzata la mia donazione? <span>▼</span></h3>
+
+                <p data-lang="en">Your donation directly supports relief supplies (food, clothing, medicine, tools, school items) that will be shipped to Jamaica. We provide transparent financial reporting on all donations.</p>
+                <p data-lang="fr" style="display:none;">Votre don soutient directement les fournitures d'aide (nourriture, vêtements, médicaments, outils, articles scolaires) qui seront expédiés en Jamaïque. Nous fournissons des rapports financiers transparents sur tous les dons.</p>
+                <p data-lang="es" style="display:none;">Tu donación apoya directamente los suministros de ayuda (alimentos, ropa, medicinas, herramientas, artículos escolares) que se enviarán a Jamaica. Proporcionamos informes financieros transparentes sobre todas las donaciones.</p>
+                <p data-lang="pt" style="display:none;">Sua doação apoia diretamente os suprimentos de ajuda (alimentos, roupas, medicamentos, ferramentas, itens escolares) que serão enviados para a Jamaica. Fornecemos relatórios financeiros transparentes sobre todas as doações.</p>
+                <p data-lang="de" style="display:none;">Ihre Spende unterstützt direkt Hilfslieferungen (Lebensmittel, Kleidung, Medikamente, Werkzeuge, Schulbedarf), die nach Jamaika versandt werden. Wir stellen transparente Finanzberichte zu allen Spenden zur Verfügung.</p>
+                <p data-lang="it" style="display:none;">La tua donazione supporta direttamente i rifornimenti di soccorso (cibo, abbigliamento, medicinali, strumenti, articoli scolastici) che verranno spediti in Giamaica. Forniamo rapporti finanziari trasparenti su tutte le donazioni.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 data-lang="en">When will the container ship? <span>▼</span></h3>
+                <h3 data-lang="fr" style="display:none;">Quand le conteneur partira-t-il ? <span>▼</span></h3>
+                <h3 data-lang="es" style="display:none;">¿Cuándo se enviará el contenedor? <span>▼</span></h3>
+                <h3 data-lang="pt" style="display:none;">Quando o contêiner será enviado? <span>▼</span></h3>
+                <h3 data-lang="de" style="display:none;">Wann wird der Container versandt? <span>▼</span></h3>
+                <h3 data-lang="it" style="display:none;">Quando verrà spedito il contenitore? <span>▼</span></h3>
+
+                <p data-lang="en">The container is scheduled to ship by November 30, 2025, arriving in Jamaica in December 2025 for immediate distribution to affected parishes.</p>
+                <p data-lang="fr" style="display:none;">Le conteneur est prévu pour partir le 30 novembre 2025, arrivant en Jamaïque en décembre 2025 pour une distribution immédiate aux paroisses touchées.</p>
+                <p data-lang="es" style="display:none;">Se espera que el contenedor se envíe el 30 de noviembre de 2025, llegando a Jamaica en diciembre de 2025 para distribución inmediata a las parroquias afectadas.</p>
+                <p data-lang="pt" style="display:none;">Está previsto que o contêiner seja enviado em 30 de novembro de 2025, chegando à Jamaica em dezembro de 2025 para distribuição imediata às paróquias afetadas.</p>
+                <p data-lang="de" style="display:none;">Der Container soll am 30. November 2025 versandt werden und im Dezember 2025 in Jamaika ankommen, um sofort an die betroffenen Gemeinden verteilt zu werden.</p>
+                <p data-lang="it" style="display:none;">Il contenitore è programmato per essere spedito entro il 30 novembre 2025, arrivando in Giamaica a dicembre 2025 per la distribuzione immediata alle parrocchie colpite.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 data-lang="en">Which parishes will receive aid? <span>▼</span></h3>
+                <h3 data-lang="fr" style="display:none;">Quelles paroisses recevront l'aide ? <span>▼</span></h3>
+                <h3 data-lang="es" style="display:none;">¿Qué parroquias recibirán ayuda? <span>▼</span></h3>
+                <h3 data-lang="pt" style="display:none;">Quais paróquias receberão ajuda? <span>▼</span></h3>
+                <h3 data-lang="de" style="display:none;">Welche Gemeinden erhalten Hilfe? <span>▼</span></h3>
+                <h3 data-lang="it" style="display:none;">Quali parrocchie riceveranno aiuto? <span>▼</span></h3>
+
+                <p data-lang="en">Relief supplies will be distributed to Saint Mary, Trelawny, Westmoreland, and Saint Elizabeth—the four parishes most severely affected by Hurricane Mellissa.</p>
+                <p data-lang="fr" style="display:none;">Les fournitures d'aide seront distribuées à Sainte-Marie, Trelawny, Westmoreland et Sainte-Élisabeth—les quatre paroisses les plus gravement touchées par l'ouragan Mellissa.</p>
+                <p data-lang="es" style="display:none;">Los suministros de ayuda se distribuirán a Saint Mary, Trelawny, Westmoreland y Saint Elizabeth, las cuatro parroquias más gravemente afectadas por el huracán Mellissa.</p>
+                <p data-lang="pt" style="display:none;">Os suprimentos de ajuda serão distribuídos para Saint Mary, Trelawny, Westmoreland e Saint Elizabeth—as quatro paróquias mais severamente afetadas pelo furacão Mellissa.</p>
+                <p data-lang="de" style="display:none;">Hilfslieferungen werden an Saint Mary, Trelawny, Westmoreland und Saint Elizabeth verteilt – die vier Gemeinden, die am stärksten vom Hurrikan Mellissa betroffen sind.</p>
+                <p data-lang="it" style="display:none;">I rifornimenti di soccorso saranno distribuiti a Saint Mary, Trelawny, Westmoreland e Saint Elizabeth, le quattro parrocchie più gravemente colpite dall'uragano Mellissa.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 data-lang="en">How are supplies distributed? <span>▼</span></h3>
+                <h3 data-lang="fr" style="display:none;">Comment les fournitures sont-elles distribuées ? <span>▼</span></h3>
+                <h3 data-lang="es" style="display:none;">¿Cómo se distribuyen los suministros? <span>▼</span></h3>
+                <h3 data-lang="pt" style="display:none;">Como os suprimentos são distribuídos? <span>▼</span></h3>
+                <h3 data-lang="de" style="display:none;">Wie werden Vorräte verteilt? <span>▼</span></h3>
+                <h3 data-lang="it" style="display:none;">Come vengono distribuiti i rifornimenti? <span>▼</span></h3>
+
+                <p data-lang="en">We partner with local organizations including parish councils, churches, schools, community groups, and youth organizations to ensure supplies reach the most vulnerable families with dignity and care.</p>
+                <p data-lang="fr" style="display:none;">Nous partenaires avec des organisations locales, notamment les conseils paroissiaux, les églises, les écoles, les groupes communautaires et les organisations de jeunesse pour assurer que les fournitures atteignent les familles les plus vulnérables avec dignité et soin.</p>
+                <p data-lang="es" style="display:none;">Nos asociamos con organizaciones locales, incluidos consejos parroquiales, iglesias, escuelas, grupos comunitarios y organizaciones juveniles para garantizar que los suministros lleguen a las familias más vulnerables con dignidad y cuidado.</p>
+                <p data-lang="pt" style="display:none;">Nos associamos com organizações locais, incluindo conselhos paroquiais, igrejas, escolas, grupos comunitários e organizações de juventude para garantir que os suprimentos cheguem às famílias mais vulneráveis com dignidade e cuidado.</p>
+                <p data-lang="de" style="display:none;">Wir arbeiten mit lokalen Organisationen zusammen, darunter Gemeinderäte, Kirchen, Schulen, Gemeinschaftsgruppen und Jugendorganisationen, um sicherzustellen, dass Vorräte mit Würde und Sorgfalt die am stärksten gefährdeten Familien erreichen.</p>
+                <p data-lang="it" style="display:none;">Collaboriamo con organizzazioni locali, inclusi consigli parrocchiali, chiese, scuole, gruppi comunitari e organizzazioni giovanili per garantire che i rifornimenti raggiungano le famiglie più vulnerabili con dignità e cura.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 data-lang="en">Can I volunteer or help? <span>▼</span></h3>
+                <h3 data-lang="fr" style="display:none;">Puis-je faire du bénévolat ou aider ? <span>▼</span></h3>
+                <h3 data-lang="es" style="display:none;">¿Puedo ser voluntario o ayudar? <span>▼</span></h3>
+                <h3 data-lang="pt" style="display:none;">Posso ser voluntário ou ajudar? <span>▼</span></h3>
+                <h3 data-lang="de" style="display:none;">Kann ich freiwillig helfen oder unterstützen? <span>▼</span></h3>
+                <h3 data-lang="it" style="display:none;">Posso fare volontariato o aiutare? <span>▼</span></h3>
+
+                <p data-lang="en">Yes! We welcome volunteers for supply collection, packing, and distribution. Contact us via WhatsApp or email to get involved.</p>
+                <p data-lang="fr" style="display:none;">Oui ! Nous accueillons les bénévoles pour la collecte, l'emballage et la distribution de fournitures. Contactez-nous via WhatsApp ou email pour vous impliquer.</p>
+                <p data-lang="es" style="display:none;">¡Sí! Aceptamos voluntarios para la recopilación, empaque y distribución de suministros. Contáctenos a través de WhatsApp o correo electrónico para involucrarse.</p>
+                <p data-lang="pt" style="display:none;">Sim! Recebemos voluntários para coleta, embalagem e distribuição de suprimentos. Entre em contato conosco via WhatsApp ou email para se envolver.</p>
+                <p data-lang="de" style="display:none;">Ja! Wir freuen uns über Freiwillige für Sammlung, Verpackung und Verteilung von Vorräten. Kontaktieren Sie uns über WhatsApp oder E-Mail, um sich zu beteiligen.</p>
+                <p data-lang="it" style="display:none;">Sì! Accogliamo volontari per la raccolta, l'imballaggio e la distribuzione di rifornimenti. Contattaci via WhatsApp o email per partecipare.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 The Allwyn Facey Foundation – Rebuild Jamaica 2025</p>
+        <p data-lang="en">Charity for People in Trouble | Shipping Hope from France to Jamaica</p>
+        <p data-lang="fr" style="display:none;">Charité pour les gens en difficulté | Envoyer l'espoir de la France à la Jamaïque</p>
+        <p data-lang="es" style="display:none;">Caridad para personas en dificultades | Enviando esperanza de Francia a Jamaica</p>
+        <p data-lang="pt" style="display:none;">Caridade para pessoas em dificuldades | Enviando esperança da França para a Jamaica</p>
+        <p data-lang="de" style="display:none;">Wohltätigkeit für Menschen in Not | Hoffnung von Frankreich nach Jamaika senden</p>
+        <p data-lang="it" style="display:none;">Carità per le persone in difficoltà | Inviare speranza dalla Francia alla Giamaica</p>
+
+        <p data-lang="en">Together, we rebuild. Together, we rise. 💚💛🖤</p>
+        <p data-lang="fr" style="display:none;">Ensemble, nous reconstruisons. Ensemble, nous nous élevons. 💚💛🖤</p>
+        <p data-lang="es" style="display:none;">Juntos, reconstruimos. Juntos, nos levantamos. 💚💛🖤</p>
+        <p data-lang="pt" style="display:none;">Juntos, reconstruímos. Juntos, nos levantamos. 💚💛🖤</p>
+        <p data-lang="de" style="display:none;">Zusammen bauen wir wieder auf. Zusammen erheben wir uns. 💚💛🖤</p>
+        <p data-lang="it" style="display:none;">Insieme, ricostruiamo. Insieme, ci alziamo. 💚💛🖤</p>
+    </footer>
+
+    <script>
+        // Language switching function
+        function changeLanguage(lang) {
+            // Hide all language content
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = 'none';
+            });
+
+            // Show selected language
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.style.display = el.tagName === 'A' ? 'inline' : (el.tagName === 'BUTTON' ? 'block' : 'block');
+            });
+
+            // Save language preference
+            localStorage.setItem('selectedLanguage', lang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+            document.getElementById('languageSelect').value = savedLanguage;
+            changeLanguage(savedLanguage);
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item h3').forEach(item => {
+            item.addEventListener('click', function() {
+                this.parentElement.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        });
+
+        document.querySelectorAll('.tier-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
